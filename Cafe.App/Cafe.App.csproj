@@ -32,8 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EventFlow, Version=0.50.3124.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventFlow.0.50.3124\lib\net451\EventFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="EventStore.ClientAPI, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventStore.Client.4.0.3\lib\net40\EventStore.ClientAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +61,9 @@
     <Compile Include="DryIoc\FastExpressionCompiler.cs" />
     <Compile Include="DryIoc\ImTools.cs" />
     <Compile Include="DryIoc\RegistrationExtensions.cs" />
+    <Compile Include="EventFlowOptionsExtensions.cs" />
+    <Compile Include="EventStoreEventPersistence.cs" />
+    <Compile Include="EventStoreJsonSerializer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +99,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cafe.Application\Cafe.Application.csproj">
+      <Project>{E5C574CF-6947-4345-B9D4-33D251BE72C9}</Project>
+      <Name>Cafe.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cafe\Cafe.csproj">
       <Project>{0807A4C7-887A-47F5-AB86-4E0CE31E5A98}</Project>
       <Name>Cafe</Name>

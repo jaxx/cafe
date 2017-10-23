@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
 using Cafe.App.DryIoc;
 using DryIoc.Experimental;
+using WinForms = System.Windows.Forms;
 
 namespace Cafe.App
 {
@@ -21,9 +21,9 @@ namespace Cafe.App
 
         private void Run()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            WinForms.Application.EnableVisualStyles();
+            WinForms.Application.SetCompatibleTextRenderingDefault(false);
+            WinForms.Application.Run(new MainForm());
         }
     }
 }
