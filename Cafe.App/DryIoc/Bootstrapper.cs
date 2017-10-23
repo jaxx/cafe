@@ -1,14 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
+using Cafe.App.Framework;
 using Cafe.Util.Settings;
 using DryIoc;
-using EventFlow;
-using EventFlow.Configuration;
-using EventFlow.Core;
-using EventFlow.Extensions;
-using EventFlow.MetadataProviders;
-using EventStore.ClientAPI;
 
 namespace Cafe.App.DryIoc
 {
@@ -22,17 +16,9 @@ namespace Cafe.App.DryIoc
 
             RegisterSettings();
 
-            //RegisterTypesWithSuffix(typeof(FileDao).Assembly, "Dao");
+            container.RegisterDelegate(x => EventFlowBuilder.Build(x.Resolve<EventFlowSettings>()));
 
-            // TODO: kuidas seda dryioc-s registreerida???
-            EventFlowOptions
-                .New
-                .RegisterServices(sr => sr.Register<IJsonSerializer, EventStoreJsonSerializer>())
-                .AddDefaults(typeof(Domain.Events.TabOpenedEvent).GetTypeInfo().Assembly)
-                .AddDefaults(typeof(Application.Commands.OpenTabCommand).GetTypeInfo().Assembly)
-                .AddMetadataProvider<AddGuidMetadataProvider>()
-                //.UseEventStore(new Uri(connectionString), ConnectionSettings.Create())
-                .CreateResolver();
+            //RegisterTypesWithSuffix(typeof(FileDao).Assembly, "Dao");
         }
 
         private IContainer GetContainer()

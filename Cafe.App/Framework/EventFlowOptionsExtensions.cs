@@ -30,7 +30,7 @@ using EventFlow.Core;
 using EventFlow.Extensions;
 using EventStore.ClientAPI;
 
-namespace Cafe.App
+namespace Cafe.App.Framework
 {
     public static class EventFlowOptionsExtensions
     {

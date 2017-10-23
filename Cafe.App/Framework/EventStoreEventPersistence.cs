@@ -35,7 +35,7 @@ using EventFlow.Logs;
 using EventStore.ClientAPI;
 using EventStore.ClientAPI.Exceptions;
 
-namespace Cafe.App
+namespace Cafe.App.Framework
 {
     public class EventStoreEventPersistence : IEventPersistence
     {
