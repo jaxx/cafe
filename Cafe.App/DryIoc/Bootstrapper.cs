@@ -16,7 +16,7 @@ namespace Cafe.App.DryIoc
 
             RegisterSettings();
 
-            container.RegisterDelegate(x => EventFlowBuilder.Build(x.Resolve<EventFlowSettings>()));
+            container.RegisterDelegate(x => EventFlowResolver.Resolve(x.Resolve<EventFlowSettings>()));
 
             //RegisterTypesWithSuffix(typeof(FileDao).Assembly, "Dao");
         }

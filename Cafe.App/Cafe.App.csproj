@@ -61,7 +61,7 @@
     <Compile Include="DryIoc\FastExpressionCompiler.cs" />
     <Compile Include="DryIoc\ImTools.cs" />
     <Compile Include="DryIoc\RegistrationExtensions.cs" />
-    <Compile Include="Framework\EventFlowBuilder.cs" />
+    <Compile Include="Framework\EventFlowResolver.cs" />
     <Compile Include="Framework\EventFlowOptionsExtensions.cs" />
     <Compile Include="Framework\EventStoreEventPersistence.cs" />
     <Compile Include="Framework\EventStoreJsonSerializer.cs" />

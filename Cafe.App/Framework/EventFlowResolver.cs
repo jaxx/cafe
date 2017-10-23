@@ -10,9 +10,9 @@ using EventStore.ClientAPI;
 
 namespace Cafe.App.Framework
 {
-    public static class EventFlowBuilder
+    public static class EventFlowResolver
     {
-        public static IRootResolver Build(EventFlowSettings eventFlowSettings)
+        public static IRootResolver Resolve(EventFlowSettings eventFlowSettings)
         {
             return EventFlowOptions
                 .New
